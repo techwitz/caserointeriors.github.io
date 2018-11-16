@@ -4356,6 +4356,8 @@ input[type="button"].btn-block {
   background-size: 100% 100%;
 }
 
+
+
 @media (max-width: 575.98px) {
   .navbar-expand-sm > .container,
   .navbar-expand-sm > .container-fluid {
@@ -5241,6 +5243,13 @@ input[type="button"].btn-block {
   padding-left: 0;
   border-radius: 0;
 }
+
+
+
+
+
+
+
 
 .alert {
   position: relative;
@@ -9641,6 +9650,15 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image:url('../img/hero-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
 }
 
 .jumbotron-overlay {
@@ -9653,6 +9671,20 @@ body {
   z-index: -1;
 }
 
+
+#heroText{
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  font-weight: 800;
+}
+
+#designText{
+  color: #ffff00;
+
+}
+/*
 .jumbotron-video {
   z-index: -2;
   position: absolute;
@@ -9660,9 +9692,9 @@ body {
   bottom: 0;
   width: 100%;
   height: auto;
-}
+}*/
 
-.jumbotron-title {
+/*.jumbotron-title {
   letter-spacing: 3px;
 }
 
@@ -9674,6 +9706,13 @@ body {
 .jumbotron .btn {
   position: absolute;
   bottom: 25vh;
+}*/
+
+
+
+
+.forMobileForm{
+  display: none;
 }
 
 /*------------------------------------------------------------------
@@ -9856,14 +9895,15 @@ body {
  5. Section Styles
 */
 .section {
-  padding: 8rem 0;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
 .section-header {
+  height: 10%;
   padding-bottom: 2rem;
+  width: 100%;
 }
 
 .section-header .section-subtitle {
@@ -9873,86 +9913,122 @@ body {
 /*------------------------------------------------------------------
  6. About Section (About Profile Image Styles)
 */
+
+#about{
+  height: 640px;
+}
+
+#aboutContainer{
+  padding-top: 50px;
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .about-image {
-  width: 80%;
-  min-height: 400px;
+  width: 100px;
+  min-height: 100px;
   background-size: cover;
   background-position: center;
   -webkit-box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
+  border-radius: 50%;
 }
 
-/*------------------------------------------------------------------
- 7. Portfolio
-*/
-.portfolio-item {
-  display: block;
-  position: relative;
+#aboutRow{
   width: 100%;
-  height: 400px;
-  margin-bottom: 30px;
-  color: white;
-  background: #2f434c;
-  background-size: cover;
-  background-position: center;
-  border-radius: 3px;
-  -webkit-box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.06);
-          box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.06);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.portfolio-item:hover .portfolio-item-info {
-  opacity: 1;
-  color: white;
-  text-decoration: none;
+.serviceContainer{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.portfolio-item-info {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(47, 67, 76, 0.8);
-  border-radius: 3px;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-  -webkit-transform: translateZ(20px);
-          transform: translateZ(20px);
+
+.serviceContainerUpperSection{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
 }
 
-.portfolio-item-category {
-  letter-spacing: 1px;
-  font-size: 14px;
+
+#servicesOne{
+  width: 40%;
+  height: 40%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
-.portfolio-filters .nav-link {
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  opacity: 0.4;
+#servicesTwo{
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
-.portfolio-filters .nav-link:hover {
-  color: #83E8BA;
+
+.serviceContainerLowerSection{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
 }
 
-.portfolio-filters .nav-link.active {
-  color: #83E8BA;
-  opacity: 1;
+
+
+
+
+#servicesThree{
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
-.portfolio-filters .nav-link.active:hover {
-  color: #83E8BA;
+
+#servicesFour{
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 /*------------------------------------------------------------------
  8. Testimonials
 */
+
+#testimonials{
+  padding-top: 30px;
+}
+
 .testimonial {
   height: 400px;
   display: -webkit-box;
@@ -9979,7 +10055,6 @@ body {
   width: 100%;
   height: auto;
 }
-
 /*------------------------------------------------------------------
  9. Cards
 */
@@ -10280,7 +10355,6 @@ fieldset {
   flex-direction: column;
 }
 
-
 .footerContainer{
   padding: 0;
 }
@@ -10293,3 +10367,104 @@ fieldset {
 .coltwo{
   padding-right: 5%;
 }
+
+
+
+
+
+
+
+
+
+
+/*------------------------------_Media Querry------------------------------*/
+
+
+@media (max-width:960px){
+
+
+
+  #logo{
+    width: 10rem;
+  }
+
+
+  #forLargeScreensForm{
+    display: none;
+  }
+
+  #heroText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+
+  #heroSubText{
+    font-size: 2rem;   
+  }
+
+  .forMobileForm{
+    display: flex;
+    height: 450px;
+  }
+
+  #formContainer{
+    justify-content: center;
+  }
+
+  #contact{
+    margin-right: 0;
+  }
+
+  #aboutContainer{
+    padding-top: 0;
+  }
+
+
+  #aboutRow{
+    flex-direction: row;
+  }
+
+  .section-header{
+    margin-top: 0 !important;
+    padding-bottom: 0;
+  }
+
+  .serviceContainerUpperSection{
+    flex-direction: column;
+  }
+
+  .serviceContainerLowerSection{
+    flex-direction: column;
+  }
+
+  #servicesOne{
+    width: 100%;
+    height: 50%;
+  }
+
+    #servicesTwo{
+    width: 100%;
+    height: 50%;
+  }
+
+  #servicesThree{
+    width: 100%;
+    height: 50%;
+  }
+
+  #servicesFour{
+    width: 100%;
+    height: 50%;
+  }
+
+
+  .about-image{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+}
+
+

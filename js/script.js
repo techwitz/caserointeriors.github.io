@@ -12,6 +12,7 @@ $(function(){
 
     $(document).scroll(function() {
          $('.navbar').toggleClass('navbar-scrolled', $(this).scrollTop() > $('.navbar').height());
+        
     });
 
     $('.navbar .nav-link').on("click", function (e) {

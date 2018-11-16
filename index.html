@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Font Family: Open Sans -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Lato:400,900" rel="stylesheet">
     <!-- Custom StyleSheet -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- Website Title -->
@@ -18,17 +18,20 @@
         <div class="container">
             <!-- Navbar Brand - Place Logo Inside the a tag -->
             <a href="#home" class="navbar-brand font-weight-bold text-white">
-            	<img src="img/logo.png" alt="logo">
+            	<img src="img/logo.png" alt="logo" id="logo">
             </a>
         </div>
     </nav>
     <!-- Jumbotron -->
-    <div id="home" class="jumbotron jumbotron-fluid h-100vh d-flex flex-row" data-image="img/hero-background.jpg">
+    <div id="home" class="jumbotron  h-100vh">
         <!-- Jumbotron Text Content -->
-        <div class="h-100 container d-flex flex-column">
-            <h1 class="text-white text-uppercase font-weight-bold jumbotron-title">We help you turn your house into your home.</h1>
-        </div>
-        <div class="h-100 container d-flex flex-column">
+        <div class="h-100 container" id="heroText">
+
+            <h1 id="heroSubText">Our <span id="designText">Designs,</span> your Dream home!</h1>
+
+        </div>
+
+        <div class="h-100 container" id="forLargeScreensForm">
            <form id="contact" method="post">
 		      <h4>Contact us</h4>
 		      <fieldset>
@@ -46,52 +49,114 @@
 		  </form>
         </div>
     </div>
+
+    <div class="forMobileForm">
+         <div class="h-100 container" id="formContainer">
+           <form id="contact" method="post">
+              <h4>Contact us</h4>
+              <fieldset>
+                <input placeholder="Your name" type="text" tabindex="1" id="name-input" required autofocus>
+              </fieldset>
+              <fieldset>
+                <input placeholder="Your Email Address" type="email" tabindex="2" id="email-input" required>
+              </fieldset>
+              <fieldset>
+                <input placeholder="Your Phone Number" type="tel" tabindex="3" id="phone-input" required>
+              </fieldset>
+              <fieldset>
+                <button name="submit" type="submit" id="contact-submit" onClick="submitToAPI(event)">Tell me more</button>
+              </fieldset>
+          </form>
+        </div>
+    </div>
     <!-- Services -->
 
     <!-- About -->
     <section id="about" class="section bg-outer-space">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 d-flex justify-content-center">
-                    <!-- About Profile Image - Replace url in data-image with your image -->
-                    <div class="about-image" data-image="img/about.jpg"></div>
+        <div class="container" id="aboutContainer">
+            <div class="row" id="aboutRow">
+                <div class="section-header mt-4 mt-lg-0  text-center">
+                    <h2 class="text-uppercase font-weight-bold text-black">Services</h2>
+            
                 </div>
-                <div class="col-lg-6">
-                    <div class="section-header mt-4 mt-lg-0 text-lg-left text-center">
-                        <h2 class="text-uppercase font-weight-bold text-twilight-blue">About Me</h2>
-                        <p class="section-subtitle text-uppercase text-twilight-blue-50 font-weight-light">Experienced Creative Professional</p>
-                    </div>
-                    <div class="section-content">
-                        <!-- Main About content -->
-                        <p class="text-manatee">
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        </p>
-                        <div class="mt-5 d-flex align-items-center">
-                            <p class="text-uppercase font-weight-bold text-manatee">Connect With Me:</p>
-                            <!-- Social Media - Change the # in the a tag to your social media link -->
-                            <ul class="list-inline ml-4">
-                                <li class="list-inline-item h5 mb-0">
-                                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                                </li>
-                                <li class="list-inline-item h5 mb-0">
-                                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                                </li>
-                                <li class="list-inline-item h5 mb-0">
-                                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                                </li>
-                                <li class="list-inline-item h5 mb-0">
-                                    <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
-                                </li>
-                            </ul>
+                <div class="serviceContainer">
+                    <div class="serviceContainerUpperSection">
+                        <div id="servicesOne">    
+                            <div class="col-lg-6 d-flex justify-content-center">
+                                <!-- About Profile Image - Replace url in data-image with your image -->
+                                <div class="about-image" data-image="img/about.jpg"></div>
+                            </div>
+                            <div class="col-lg-6">
+                            
+                                <div class="section-content">
+                                    <!-- Main About content -->
+                                    <p class="text-manatee">
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+
+
+                        <div id="servicesTwo">    
+                            <div class="col-lg-6 d-flex justify-content-center">
+                                <!-- About Profile Image - Replace url in data-image with your image -->
+                                <div class="about-image" data-image="img/about.jpg"></div>
+                            </div>
+                            <div class="col-lg-6">
+                            
+                                <div class="section-content">
+                                    <!-- Main About content -->
+                                    <p class="text-manatee">
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    </p>
+                                </div>
+                            </div>
+                        </div>  
                     </div>
-                </div>
+
+
+                    <div class="serviceContainerLowerSection">
+                        <div id="servicesThree">    
+                            <div class="col-lg-6 d-flex justify-content-center">
+                                <!-- About Profile Image - Replace url in data-image with your image -->
+                                <div class="about-image" data-image="img/about.jpg"></div>
+                            </div>
+                            <div class="col-lg-6">
+                            
+                                <div class="section-content">
+                                    <!-- Main About content -->
+                                    <p class="text-manatee">
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    </p>
+                                </div>
+                            </div>
+                        </div> 
+
+
+                        <div id="servicesFour">    
+                            <div class="col-lg-6 d-flex justify-content-center">
+                                <!-- About Profile Image - Replace url in data-image with your image -->
+                                <div class="about-image" data-image="img/about.jpg"></div>
+                            </div>
+                            <div class="col-lg-6">
+                            
+                                <div class="section-content">
+                                    <!-- Main About content -->
+                                    <p class="text-manatee">
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    </p>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>   
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="section" data-image="img/testimonial-bg.jpg">
+     <section id="testimonials" class="section" data-image="img/testimonial-bg.jpg">
         <div class="testimonialsContainer">
 
             <div class="section-header text-center">
