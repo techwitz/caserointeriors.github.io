@@ -32,34 +32,35 @@ $(function(){
 
 function submitToAPI(e) {
     e.preventDefault();
-    var URL = "https://4uei3fukdg.execute-api.us-east-1.amazonaws.com/dev/casero-contact-form";
+
+    var name = document.getElementById("name-input").value || document.getElementById("ph-name-input").value;
+    var phone = document.getElementById("phone-input").value || document.getElementById("ph-phone-input").value;
+    var email = document.getElementById("email-input").value || document.getElementById("ph-email-input").value;
 
     var Namere = /[A-Za-z]{1}[A-Za-z]/;
-    if (!Namere.test($("#name-input").val())) {
-	    alert ("Name can not be less than 2 char");
+    if (name.length < 1) {
+	    alert ("Name can not be empty");
 	    return;
     }
 
     var mobilere = /[0-9]{10}/;
-    if (!mobilere.test($("#phone-input").val())) {
+    if (!mobilere.test(phone)) {
 	    alert ("Please enter valid mobile number");
 	    return;
     }
 
-    if ($("#email-input").val()=="") {
+    if (email == "") {
 	    alert ("Please enter your email id");
 	    return;
     }
 
     var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-    if (!reeamil.test($("#email-input").val())) {
+    if (!reeamil.test(email)) {
 	    alert ("Please enter valid email address");
 	    return;
     }
 
-    var name = $("#name-input").val();
-    var phone = $("#phone-input").val();
-    var email = $("#email-input").val();
+    var URL = "https://80xsv3x8u4.execute-api.us-east-1.amazonaws.com/dev-001/contact-us";
 
     var data = {
       "name" : name,
@@ -75,11 +76,16 @@ function submitToAPI(e) {
      contentType: "application/json; charset=utf-8",
      data: JSON.stringify(data),
 
-     success: function () {
+     success: function (response) {
        // clear form and show a success message
-       alert("Thanks for showing interest. We will get back to you shortly.");
-       document.getElementById("contact").reset();
-       location.reload();
+       if (response.status == "success") {
+	 alert("Thanks for showing interest. We will get back to you shortly.");
+         document.getElementById("contact").reset();
+         location.reload();
+       }
+       else {
+         alert("Your data could not be saved. Please try again!");
+       }
      },
 
      error: function () {
